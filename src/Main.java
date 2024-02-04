@@ -4,7 +4,9 @@ public class Main {
         // Asignando PARÁMETROS
         Clase objeto1 = new Clase("nada", 32, 3.14);
         Clase objeto2 = new Clase("pan", 55, 99.9,100);
-        Clase objeto3 = new Clase("algo", 3, 50);
+        Clase objeto3 = new Clase("algo", 3, Clase.getVelocidadMaxCiudad()); // Uso de constante (getVel..)
+        Clase objeto4 = new Clase("algo2", 40, 40, 50, Color.ROJO);
+        Clase objeto5 = new Clase("traza", 39, 30, 40, Color.AZUL, Tipo.MAZDA);
 
         // PROBANDO MÉTODOS
         System.out.println(objeto1.metodo1());
@@ -30,6 +32,42 @@ public class Main {
 
         // Índice AI.
         System.out.println(objeto3); // Tiene su Id Auto Incremental automáticamente.
+
+        // Enumerador Color (Define un conjunto fijo de constantes)
+        System.out.println(objeto4);
+
+        // Enumerador Tipo (Se puede acceder a los métodos del enumerador Tipo a través del método de getTipo).
+        Tipo tipo1 = objeto5.getTipo();
+        System.out.println(objeto5);
+        System.out.println(tipo1.getNombre() + " " + tipo1.getNumeroPuertas());
+        System.out.println(objeto5.getTipo().getNumeroPuertas());
+
+        // Utilizando Switch
+        Tipo tipo = objeto5.getTipo();
+        System.out.println(tipo);
+        switch(tipo){
+            case MAZDA:
+                System.out.println("El automóvil es deportivo");
+                break;
+            case TOYOTA:
+                System.out.println("El automóvil es grande");
+                break;
+            case SUBARU:
+                System.out.println("El automóvil es de carreras");
+                break;
+        }
+
+        // Ahora lo cambiamos a Toyota
+        // VERSION MEJORADA SWITCH
+        // Desde la version 13 de java se puede utilizas switch con flecha
+        // Esta flecha incluye el break, por lo que no es necesario el break.
+        objeto5.setTipo(Tipo.TOYOTA);
+        tipo = objeto5.getTipo();
+        switch (tipo){
+            case MAZDA -> System.out.println("El automóvil es deportivo");
+            case TOYOTA -> System.out.println("El automóvil es grande");
+            case SUBARU -> System.out.println("El automóvil es de carreras");
+        }
 
 
     }
