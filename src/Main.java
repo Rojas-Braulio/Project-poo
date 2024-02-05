@@ -69,6 +69,17 @@ public class Main {
             case SUBARU -> System.out.println("El automóvil es de carreras");
         }
 
+        // Enumerador For - For Each
+        Tipo[] tipos = Tipo.values();
+        for (Tipo t: tipos){
+            System.out.println(t.getNombre() + " = " + t.name() + " " + t.getNumeroPuertas());
+        }
+
+        // Enumeradores típicos:
+        // - Nombres de la semana
+        // - Planetas (Con sus constantes, ej: masa, circunferencia, gravedad)
+        // - Meses del año (Con sus contantes, ej: días, horas, minutos).
+
 
     }
 }
