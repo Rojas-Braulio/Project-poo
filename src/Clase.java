@@ -27,6 +27,7 @@ public class Clase {
         this.atributo2 = atributo2;
         this.atributo3 = atributo3;
     }
+
     public Clase(String atributo1, int atributo2, double atributo3, double divisor) {
         this(atributo1, atributo2, atributo3); // Así se referencia al primer constructor, no se hace con el nombre.
         this.divisor = divisor;
@@ -108,6 +109,7 @@ public class Clase {
     }
 
     // toString
+
     @Override
     public String toString() {
         return "Clase{" +
