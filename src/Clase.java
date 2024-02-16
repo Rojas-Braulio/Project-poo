@@ -110,5 +110,16 @@ public class Clase {
 
     // toString
 
-
+    @Override
+    public String toString() {
+        return "Clase{" +
+                "id=" + id +
+                ", atributo1='" + atributo1 + '\'' +
+                ", atributo2=" + atributo2 +
+                ", atributo3=" + atributo3 +
+                ", divisor=" + divisor +
+                ", color=" + color +
+                ", tipo=" + tipo +
+                '}';
+    }
 }
